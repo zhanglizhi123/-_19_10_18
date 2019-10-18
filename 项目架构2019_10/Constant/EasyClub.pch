@@ -1,0 +1,75 @@
+
+
+//
+//  EasyClub.pch
+//  EasyClub
+//
+//  Created by zhao on 2019/4/17.
+//  Copyright © 2019 zhang. All rights reserved.
+//
+
+/*
+ $(SRCROOT)/YY123/PrefixHeader.pch
+ 到项目文件夹下面/后面跟着文件夹下路径
+ */
+
+#ifndef EasyClub_pch
+#define EasyClub_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* EasyClub_pch */
+
+#ifdef __OBJC__
+#import "Constant.h"
+#import "ImprotHeader.h"
+#import "NotificationName.h"
+#import "ColorHeader.h"
+#endif
+
+
+#ifdef DEBUG
+
+#define ISDEBUG YES
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+
+//网络连接头
+#define SERVICE_HOST  @"http://ass.estxy.com/easyass"   //测试环境
+//#define SERVICE_HOST  @"http://ass.estxy.cn/easyass"   //正式环境
+
+#define IMAGE_IP_1 @"http://39.107.143.35:9088"
+#define IMAGE_IP_2 @"http://easyclub.test.upcdn.net"
+
+
+#define NET_APNS_Cername @"apsdevelopmenteasyclub"
+
+
+//高德地图
+#define GD_MAP_KEY @""
+
+
+
+#else
+
+
+#define ISDEBUG NO
+#define NSLog(...)
+#define debugMethod()
+
+//#define SERVICE_HOST  @"http://ass.estxy.com/easyass"   //测试环境
+#define SERVICE_HOST  @"http://ass.estxy.cn/easyass"   //正式环境
+
+
+#define IMAGE_IP_1 @"http://39.107.143.35:9088"
+#define IMAGE_IP_2 @"http://easyclub.test.upcdn.net"
+
+
+#define NET_APNS_Cername @"apsPusEasyClubProduct"
+
+
+//高德地图
+#define GD_MAP_KEY @""
+
+#endif
